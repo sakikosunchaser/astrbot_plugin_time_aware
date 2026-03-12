@@ -6,6 +6,7 @@ from pathlib import Path
 
 from astrbot.api.event import filter, AstrMessageEvent
 from astrbot.api.provider import ProviderRequest
+from astrbot.api.star import Context, Star, register
 
 try:
     from zoneinfo import ZoneInfo
@@ -13,9 +14,15 @@ except ImportError:
     ZoneInfo = None
 
 
-class TimeAwarePlugin:
-    def __init__(self, context=None):
-        self.context = context
+@register(
+    "astrbot_plugin_time_aware",
+    "sakikosunchaser",
+    "为 LLM 注入北京时间上下文，在不破坏原有人格设定的前提下动态微调回复语气。",
+    "0.1.0"
+)
+class TimeAwarePlugin(Star):
+    def __init__(self, context: Context):
+        super().__init__(context)
         self.base_dir = Path(__file__).resolve().parent
         self.plugin_name = "astrbot_plugin_time_aware"
 
