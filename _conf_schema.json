@@ -1,0 +1,23 @@
+{
+  "enabled": true,
+  "timezone": "Asia/Shanghai",
+  "strict_persona_preservation": true,
+  "task_mode_suppress_time_hint": true,
+  "debug_log": false,
+  "apply_in_private": true,
+  "apply_in_group": true,
+  "enabled_groups": [],
+  "disabled_groups": [],
+  "enabled_users": [],
+  "disabled_users": [],
+  "merge_separator": "---\n以下为运行时动态上下文，请在不覆盖上述人格设定的前提下参考：",
+  "time_ranges": {
+    "morning": ["05:00", "08:59"],
+    "forenoon": ["09:00", "11:29"],
+    "noon": ["11:30", "13:59"],
+    "afternoon": ["14:00", "17:59"],
+    "evening": ["18:00", "22:59"],
+    "late_night": ["23:00", "01:59"],
+    "dawn": ["02:00", "04:59"]
+  }
+}
